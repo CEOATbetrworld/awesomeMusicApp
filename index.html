@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <title>Awesome Music App</title>
     <script type="text/paperscript" canvas="myCanvas">
-    for(var y = 0 ; y < 1000 ; y+=100 ){
-        for(var x = 0 ; x < 1000 ; x+= 100){
-             new Path.Circle(new Point(x,y),10).fillColor = "lightgreen";
-         }
-    }
+
+    function onKeyDown(event) {
+      var maxPoint = new Point(view.size.width, view.size.height);
+      console.log(maxPoint);
+      var randomPoint = Point.random();
+      var point = randomPoint*maxPoint;
+      new Path.Circle(point,10).fillColor = "lightgreen";
+}
     </script>
 </head>
 
