@@ -195,6 +195,17 @@
               }
             }
           }
+
+          function onMouseDown(event) {
+            console.log(event);
+            var maxPoint = new Point(view.size.width, view.size.height);
+                var randomPoint = Point.random();
+                var point = randomPoint * maxPoint;
+                var newCircle = new Path.Circle(point, 500)
+                newCircle.fillColor = "lightGreen";
+
+        }
+        
     </script>
 </head>
 
