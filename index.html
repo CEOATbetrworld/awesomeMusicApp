@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   
+    
     <script src="paper-full.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.min.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -180,6 +180,18 @@
             }
        
         }
+
+        function onMouseDown(event) {
+            console.log(event);
+            var maxPoint = new Point(view.size.width, view.size.height);
+                var randomPoint = Point.random();
+                var point = randomPoint * maxPoint;
+                var newCircle = new Path.Circle(point, 500)
+                newCircle.fillColor = "lightGreen";
+                circles.push(newCircle);
+                keyData["a"].sound.play()
+
+        }
        
         function onFrame(event){
             for(var i = 0; i < circles.length; i++){
@@ -194,17 +206,7 @@
             }
           }
 
-          function onMouseDown(event) {
-            console.log(event);
-            var maxPoint = new Point(view.size.width, view.size.height);
-                var randomPoint = Point.random();
-                var point = randomPoint * maxPoint;
-                var newCircle = new Path.Circle(point, 500)
-                newCircle.fillColor = "lightGreen";
-                circles.push(newCircle);
-                keyData["a"].sound.play()
-
-        }
+         
         
     </script>
 </head>
